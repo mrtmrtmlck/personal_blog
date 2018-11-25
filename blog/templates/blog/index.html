@@ -1,0 +1,32 @@
+{% extends "blog/base_template.html" %}
+
+{% block content %}
+    {% if article_list %}
+        <ul>
+            {% for article in article_list %}
+                <li>
+                    <a href="{% url 'article-detail' article.id article.slug %}">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 50em;">
+                            <div class="card-header">
+                                <small><em>{{ article.created_at|date:"M d, Y" }}</em></small>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ article.title }}</h5>
+                                <h6 class="card-subtitle mb-2">
+                                    <div class="d-flex">
+                                        {% for label in article.label.all %}
+                                            <div class="p-1">
+                                                <span class="badge badge-secondary">{{ label.name }}</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </h6>
+                                <p class="card-text">{{ article.body }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+a, u {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+}
+
+.card-title {
+    font-family: 'freight-sans-pro', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+    font-size: 40px;
+    color: #ffc107;
+
+}
+
+nav {
+    background-color: #4f554e;
+
+}
+
+.navbar-brand {
+    color: #ffc107 !important;
+}
