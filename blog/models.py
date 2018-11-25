@@ -29,7 +29,7 @@ class Article(models.Model):
     label = models.ManyToManyField(Label)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=50, blank=True)
+    slug = models.SlugField(max_length=50, blank=True, unique=True)
 
     class Meta:
         ordering = ['-modified_at']

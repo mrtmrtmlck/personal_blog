@@ -1,3 +1,7 @@
+html, body {
+    font-family: 'freight-sans-pro', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+}
+
 a, u {
     text-decoration: none !important;
 }
@@ -7,17 +11,55 @@ ul {
 }
 
 .card-title {
-    font-family: 'freight-sans-pro', 'Helvetica', 'Avenir', 'Arial', sans-serif;
     font-size: 40px;
-    color: #ffc107;
-
+    color: darkorange;
 }
 
-nav {
-    background-color: #4f554e;
+.card-title:hover, .navbar-brand:hover {
+    color: orange !important;
+}
 
+.card-header-link {
+    color: white;
+}
+
+.label-link:hover {
+    background-color: white;
+    color: #343a40;
 }
 
 .navbar-brand {
-    color: #ffc107 !important;
+    color: darkorange !important;
+}
+
+.btn-outline-darkorange {
+    color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-outline-darkorange:hover {
+    background-color: darkorange;
+    border-color: darkorange;
+    color: #343a40;
+}
+
+.navbar-search-input:focus {
+    box-shadow: none;
+}
+
+.author-header, .author-header:hover {
+    color: black;
+}
+
+.author-bio {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.social-link {
+    color: #343a40;
+}
+
+.social-link:hover {
+    color: darkorange;
 }

@@ -1,13 +1,13 @@
-{% extends "blog/base_template.html" %}
+{% extends "blog/base.html" %}
 
 {% block content %}
     {% if article_list %}
         <ul>
             {% for article in article_list %}
                 <li>
-                    <a href="{% url 'article-detail' article.id article.slug %}">
+                    <a href="{% url 'article-detail' article.slug %}">
                         <div class="card text-white bg-dark mb-3" style="max-width: 50em;">
-                            <div class="card-header">
+                            <div class="card-header card-header-link">
                                 <small><em>{{ article.created_at|date:"M d, Y" }}</em></small>
                             </div>
                             <div class="card-body">
@@ -15,9 +15,13 @@
                                 <h6 class="card-subtitle mb-2">
                                     <div class="d-flex">
                                         {% for label in article.label.all %}
-                                            <div class="p-1">
-                                                <span class="badge badge-secondary">{{ label.name }}</span>
-                                            </div>
+                                            <a href="{% url 'search-article-label' label.name %}">
+                                                <div class="p-1">
+                                                <span class="badge badge-secondary label-link">
+                                                    {{ label.name }}
+                                                </span>
+                                                </div>
+                                            </a>
                                         {% endfor %}
                                     </div>
                                 </h6>
@@ -28,5 +32,7 @@
                 </li>
             {% endfor %}
         </ul>
+    {% else %}
+        <h2>No results found.</h2>
     {% endif %}
 {% endblock %}
