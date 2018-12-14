@@ -8,7 +8,8 @@
                     <a href="{% url 'article-detail' article.slug %}">
                         <div class="card text-white bg-dark mb-3" style="max-width: 50em;">
                             <div class="card-header card-header-link">
-                                <small><em>{{ article.created_at|date:"M d, Y" }}</em></small>
+                                <small><em>posted on {{ article.created_at|date:"M d, Y" }} by {{ article.author }}</em>
+                                </small>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ article.title }}</h5>
@@ -25,7 +26,15 @@
                                         {% endfor %}
                                     </div>
                                 </h6>
-                                <p class="card-text">{{ article.body }}</p>
+                                <p class="card-text">
+                                    {{ article.body|truncatewords:50|safe }}
+                                <div class="row">
+                                    <div class="col-md-2 offset-md-10">
+                                        <a class="read-more" href="{% url 'article-detail' article.slug %}">
+                                            Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                                </p>
                             </div>
                         </div>
                     </a>

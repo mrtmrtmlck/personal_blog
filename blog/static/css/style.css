@@ -15,7 +15,7 @@ ul {
     color: darkorange;
 }
 
-.card-title:hover, .navbar-brand:hover {
+.card-title:hover, .navbar-brand:hover, .read-more:hover {
     color: orange !important;
 }
 
@@ -28,7 +28,7 @@ ul {
     color: #343a40;
 }
 
-.navbar-brand {
+.navbar-brand, .read-more {
     color: darkorange !important;
 }
 
