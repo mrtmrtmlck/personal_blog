@@ -10,25 +10,12 @@ ul {
     list-style: none;
 }
 
-.card-title {
-    font-size: 40px;
-    color: darkorange;
-}
-
-.card-title:hover, .navbar-brand:hover, .read-more:hover {
-    color: orange !important;
-}
-
-.card-header-link {
-    color: white;
-}
-
 .label-link:hover {
     background-color: white;
     color: #343a40;
 }
 
-.navbar-brand, .read-more {
+.read-more {
     color: darkorange !important;
 }
 
@@ -54,8 +41,4 @@ ul {
 
 .social-link {
     color: #343a40;
-}
-
-.social-link:hover {
-    color: darkorange;
 }
