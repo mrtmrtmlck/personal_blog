@@ -7,7 +7,7 @@
                 <h1 class="text-center">{{ article.title }}</h1>
             </header>
             <section>
-                <p>{{ article.body }}</p>
+                <p>{{ article.body|safe }}</p>
             </section>
         </article>
     </div>

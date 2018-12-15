@@ -1,3 +1,4 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from django.utils.text import slugify
 
@@ -24,7 +25,7 @@ class Label(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    body = models.TextField()
+    body = RichTextUploadingField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     label = models.ManyToManyField(Label)
     created_at = models.DateTimeField(auto_now_add=True)
