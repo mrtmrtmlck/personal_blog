@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
-from blog.models import Article, Author
+from blog.models import Article
 
 
 class ArticleListView(ListView):
@@ -14,8 +14,8 @@ class ArticleDetailView(DetailView):
     model = Article
 
 
-class AuthorDetailView(DetailView):
-    model = Author
+def about(request):
+    return render(request, 'blog/about.html')
 
 
 def search_article(request):

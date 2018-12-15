@@ -27,22 +27,13 @@
 </nav>
 <header>
     {% block header %}
-        {# TODO: fix this static url parameter #}
-        <div class="row">
-            <div class="col-md-4 offset-md-4">
-                <a href="{% url 'author-detail' 1 %}" class="author-header">
-                    <h2 class="text-center">Mert Malçok</h2>
-                    <p class="text-center">Software Engineer</p>
-                </a>
-            </div>
-            <div class="col-md-1 offset-md-3">
-                <a class="social-link" href="https://github.com/mrtmrtmlck">
-                    <i class="fab fa-github-square fa-2x"></i>
-                </a>
-                <a class="social-link" href="https://www.linkedin.com/in/mert-murat-malcok">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-            </div>
+        <div>
+            <a class="social-link" href="https://github.com/mrtmrtmlck">
+                <i class="fab fa-github-square fa-2x"></i>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/mert-murat-malcok">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
         </div>
     {% endblock %}
 </header>

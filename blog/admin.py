@@ -1,13 +1,8 @@
 from django.contrib import admin
 
-from blog.models import Author, Label, Article
+from blog.models import Label, Article
 
 admin.site.register(Label)
-
-
-@admin.register(Author)
-class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'birthday',)
 
 
 @admin.register(Article)
