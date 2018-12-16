@@ -16,8 +16,8 @@ class Label(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=100)
     body = RichTextUploadingField()
-    summary = models.TextField(null=True)
-    thumbnail = models.ImageField(upload_to='media/thumbnail', null=True)
+    summary = models.TextField()
+    thumbnail = models.ImageField(upload_to='thumbnails')
     label = models.ManyToManyField(Label)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
