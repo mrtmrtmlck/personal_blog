@@ -4,23 +4,44 @@
     {% if article_list %}
         <div class="card-deck">
             {% for article in article_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ article.thumbnail.url }}"
-                             style="height: 225px; width: 100%; display: block;">
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <a class="card-link" href="{% url 'article-detail' article.slug %}">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm" style="height: 40em; width: 100%;">
+                            <img class="card-img-top" src="{{ article.thumbnail.url }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ article.title }}</h5>
+                                <h6 class="card-subtitle mb-2">
+                                    <div class="d-flex flex-wrap">
+                                        {% for label in article.label.all %}
+                                            <a href="{% url 'search-article-label' label.name %}">
+                                                <div class="p-1">
+                                                <span class="badge badge-secondary label-link">
+                                                    {{ label.name }}
+                                                </span>
+                                                </div>
+                                            </a>
+                                        {% endfor %}
+                                    </div>
+                                </h6>
+                                <p class="card-text">{{ article.summary|truncatewords:30 }}</p>
+                                <div class="d-flex bd-highlight">
+                                    <div class="bd-highlight">
+                                        <small class="text-muted">
+                                            <em>posted on {{ article.created_at|date:"M d, Y" }}</em>
+                                        </small>
+                                    </div>
+                                    <div class="ml-auto bd-highlight">
+                                        <a class="btn btn-sm btn-outline-secondary"
+                                           href="{% url 'article-detail' article.slug %}">
+                                            Read More <i class="fa fa-arrow-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <small class="text-muted">9 mins</small>
+
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             {% endfor %}
         </div>
     {% else %}

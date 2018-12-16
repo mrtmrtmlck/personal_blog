@@ -11,23 +11,9 @@ ul {
 }
 
 .label-link:hover {
-    background-color: white;
-    color: #343a40;
-}
-
-.read-more {
-    color: darkorange !important;
-}
-
-.btn-outline-darkorange {
-    color: darkorange;
-    border-color: darkorange;
-}
-
-.btn-outline-darkorange:hover {
-    background-color: darkorange;
-    border-color: darkorange;
-    color: #343a40;
+    background-color: #dfe0e1;
+    color: #6c757d;
+    line-break: normal;
 }
 
 .navbar-search-input:focus {
@@ -41,4 +27,8 @@ ul {
 
 .social-link {
     color: #343a40;
+}
+
+.card-link, .card-link:hover {
+    color: inherit;
 }
