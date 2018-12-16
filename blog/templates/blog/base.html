@@ -52,8 +52,10 @@
     </form>
 </nav>
 <main>
-    <div class="d-flex justify-content-center">
-        {% block content %}{% endblock %}
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            {% block content %}{% endblock %}
+        </div>
     </div>
     {% if is_paginated %}
         <div class="container">

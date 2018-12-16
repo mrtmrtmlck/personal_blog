@@ -6,7 +6,7 @@ from blog.models import Article
 
 class ArticleListView(ListView):
     model = Article
-    paginate_by = 5
+    paginate_by = 6
     template_name = 'blog/index.html'
 
 

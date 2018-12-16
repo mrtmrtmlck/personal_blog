@@ -5,6 +5,7 @@
         <article>
             <header>
                 <h1 class="text-center">{{ article.title }}</h1>
+                <p>posted on {{ article.created_at|date:"M d, Y" }} by {{ article.author }}</p>
             </header>
             <section>
                 <p>{{ article.body|safe }}</p>
