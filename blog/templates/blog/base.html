@@ -52,9 +52,7 @@
         <div class="row mt-5 justify-content-center">
             {% block content %}{% endblock %}
         </div>
-    </div>
-    {% if is_paginated %}
-        <div class="container">
+        {% if is_paginated %}
             <div class="d-flex bd-highlight mb-3">
                 <div class="mr-auto p-2 bd-highlight">
                     {% if page_obj.has_previous %}
@@ -73,8 +71,8 @@
                     {% endif %}
                 </div>
             </div>
-        </div>
-    {% endif %}
+        {% endif %}
+    </div>
 </main>
 <footer class="blog-footer">
     <div class="d-flex justify-content-center">

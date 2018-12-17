@@ -14,10 +14,6 @@ class ArticleDetailView(DetailView):
     model = Article
 
 
-def about(request):
-    return render(request, 'blog/about.html')
-
-
 def search_article(request):
     article_list = Article.objects.filter(title__icontains=request.GET['keyword'])
     return render(request, 'blog/index.html', {'article_list': article_list})
