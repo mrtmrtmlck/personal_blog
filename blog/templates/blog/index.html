@@ -2,19 +2,19 @@
 
 {% block content %}
     {% if article_list %}
-        <div class="card-deck">
+        <div class="card-deck mb-3">
             {% for article in article_list %}
                 <a class="card-link" href="{% url 'article-detail' article.slug %}">
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm" style="height: 40em; width: 100%;">
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm" style="height: auto;">
                             <img class="card-img-top" src="{{ article.thumbnail.url }}" alt="Card image cap">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ article.title }}</h5>
                                 <h6 class="card-subtitle mb-2">
                                     <div class="d-flex flex-wrap">
                                         {% for label in article.label.all %}
                                             <a href="{% url 'search-article-label' label.name %}">
-                                                <div class="p-1">
+                                                <div class="pr-1">
                                                 <span class="badge badge-secondary label-link">
                                                     {{ label.name }}
                                                 </span>
@@ -23,8 +23,8 @@
                                         {% endfor %}
                                     </div>
                                 </h6>
-                                <p class="card-text">{{ article.summary|truncatewords:30 }}</p>
-                                <div class="d-flex bd-highlight">
+                                <p class="card-text">{{ article.summary|truncatewords:35 }}</p>
+                                <div class="d-flex bd-highlight mt-auto">
                                     <div class="bd-highlight">
                                         <small class="text-muted">
                                             <em>posted on {{ article.created_at|date:"M d, Y" }}</em>
@@ -37,7 +37,6 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

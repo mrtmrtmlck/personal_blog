@@ -1,19 +1,21 @@
-html, body {
-    font-family: 'freight-sans-pro', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-a, u {
+footer a {
+    color: #6c757d;
     text-decoration: none !important;
 }
 
-ul {
-    list-style: none;
+footer a:hover {
+    color: rgba(0, 0, 0, .7);
 }
 
 .label-link:hover {
     background-color: #dfe0e1;
     color: #6c757d;
-    line-break: normal;
 }
 
 .navbar-search-input:focus {
@@ -22,13 +24,17 @@ ul {
 
 .bio {
     font-size: 30px;
-    font-weight: 100;
-}
-
-.social-link {
-    color: #343a40;
+    font-weight: lighter;
 }
 
 .card-link, .card-link:hover {
     color: inherit;
+}
+
+.blog-footer {
+    padding: 2.5rem 0;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-top: .05rem solid #e5e5e5;
+    margin-top: auto;
 }

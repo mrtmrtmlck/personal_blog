@@ -58,7 +58,7 @@
             <div class="d-flex bd-highlight mb-3">
                 <div class="mr-auto p-2 bd-highlight">
                     {% if page_obj.has_previous %}
-                        <a class="btn btn-lg btn-outline-warning btn-outline-darkorange"
+                        <a class="btn btn-lg btn-outline-secondary"
                            href="{{ request.path }}?page={{ page_obj.previous_page_number }}">
                             <i class="fas fa-arrow-left"></i> Newer
                         </a>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="p-2 bd-highlight">
                     {% if page_obj.has_next %}
-                        <a class="btn btn-lg btn-outline-warning btn-outline-darkorange"
+                        <a class="btn btn-lg btn-outline-secondary"
                            href="{{ request.path }}?page={{ page_obj.next_page_number }}">
                             Older <i class="fas fa-arrow-right"></i>
                         </a>
@@ -76,5 +76,27 @@
         </div>
     {% endif %}
 </main>
+<footer class="blog-footer">
+    <div class="d-flex justify-content-center">
+        <div class="p-2 bd-highlight">
+            <a href="https://github.com/mrtmrtmlck">
+                <i class="fab fa-github-square fa-3x"></i>
+            </a>
+        </div>
+        <div class="p-2 bd-highlight">
+            <a href="https://www.linkedin.com/in/mert-murat-malcok">
+                <i class="fab fa-linkedin fa-3x"></i>
+            </a>
+        </div>
+    </div>
+    <div class="text-muted">
+        <p>
+            This website was developed by <a href="{% url 'about' %}">Mert Malçok</a>
+        </p>
+        <small>
+            Copyright &copy; {% now "Y" %}
+        </small>
+    </div>
+</footer>
 </body>
 </html>
