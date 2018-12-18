@@ -11,7 +11,7 @@
     {% block title %}{% endblock %}
 </head>
 <body>
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{% url 'index' %}">Mert Malçok</a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
@@ -42,7 +42,8 @@
                    name="keyword"
                    placeholder="Search articles">
             <span class="input-group-append">
-                    <span class="input-group-text bg-white"><i class="fas fa-search"></i></span>
+                <button class="input-group-text bg-white btn-search" type="submit"><i
+                        class="fas fa-search"></i></button>
             </span>
         </div>
     </form>

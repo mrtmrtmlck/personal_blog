@@ -7,8 +7,18 @@
                 <h1 class="text-center">{{ article.title }}</h1>
                 <p class="text-center text-muted"><em>posted on {{ article.created_at|date:"M d, Y" }}</em></p>
             </header>
-            <section>
+            <section class="pb-5">
                 <p>{{ article.body|safe }}</p>
+                <div class="d-flex flex-row bd-highlight pt-3">
+                    {% for label in article.label.all %}
+                        <div class="pr-2 bd-highlight">
+                            <a class="btn btn-sm btn-outline-secondary"
+                               href="{% url 'search-article-label' label.name %}">
+                                <i class="fas fa-tag"></i> {{ label.name }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
             </section>
         </article>
     </div>

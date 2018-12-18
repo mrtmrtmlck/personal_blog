@@ -13,7 +13,7 @@ footer a:hover {
     color: rgba(0, 0, 0, .7);
 }
 
-.label-link:hover {
+.badge.badge-secondary:hover {
     background-color: #dfe0e1;
     color: #6c757d;
 }
@@ -49,4 +49,8 @@ footer a:hover {
     letter-spacing: .01rem;
     font-size: 21px;
     line-height: 1.58;
+}
+
+.btn-search:focus {
+    outline: 0 !important;
 }

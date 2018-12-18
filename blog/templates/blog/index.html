@@ -15,9 +15,9 @@
                                         {% for label in article.label.all %}
                                             <a href="{% url 'search-article-label' label.name %}">
                                                 <div class="pr-1">
-                                                <span class="badge badge-secondary label-link">
-                                                    {{ label.name }}
-                                                </span>
+                                                    <span class="badge badge-secondary">
+                                                        {{ label.name }}
+                                                    </span>
                                                 </div>
                                             </a>
                                         {% endfor %}

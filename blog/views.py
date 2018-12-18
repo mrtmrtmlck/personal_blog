@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
 from blog.models import Article
@@ -14,11 +13,17 @@ class ArticleDetailView(DetailView):
     model = Article
 
 
-def search_article(request):
-    article_list = Article.objects.filter(title__icontains=request.GET['keyword'])
-    return render(request, 'blog/index.html', {'article_list': article_list})
+class SearchArticleView(ListView):
+    paginate_by = 4
+    template_name = 'blog/index.html'
+
+    def get_queryset(self):
+        return Article.objects.filter(title__icontains=self.request.GET['keyword'])
 
 
-def search_article_by_label(request, label):
-    article_list = Article.objects.filter(label__name__exact=label)
-    return render(request, 'blog/index.html', {'article_list': article_list})
+class SearchArticleByLabelView(ListView):
+    paginate_by = 4
+    template_name = 'blog/index.html'
+
+    def get_queryset(self):
+        return Article.objects.filter(label__name__exact=self.kwargs['label'])
