@@ -38,3 +38,15 @@ footer a:hover {
     border-top: .05rem solid #e5e5e5;
     margin-top: auto;
 }
+
+.article-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 800px;
+}
+
+.article-content {
+    letter-spacing: .01rem;
+    font-size: 21px;
+    line-height: 1.58;
+}
