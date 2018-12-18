@@ -147,3 +147,15 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 # static media settings
 STATIC_URL = '/static/'
 STATIC_ROOT = f'https://{AWS_S3_CUSTOM_DOMAIN}{STATIC_URL}'
+
+#  Cache settings
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+CACHE_TTL = 60 * 30
