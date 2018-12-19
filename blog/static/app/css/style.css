@@ -23,8 +23,14 @@ footer a:hover {
 }
 
 .bio {
-    font-size: 30px;
+    font-size: 27px;
     font-weight: lighter;
+    text-align: center;
+}
+
+.bio-list {
+    list-style: none;
+    line-height: 1.60;
 }
 
 .card-link, .card-link:hover {

@@ -7,7 +7,7 @@
                 <h1 class="text-center">{{ article.title }}</h1>
                 <p class="text-center text-muted"><em>posted on {{ article.created_at|date:"M d, Y" }}</em></p>
             </header>
-            <section class="pb-5">
+            <section class="article-content pb-5">
                 <p>{{ article.body|safe }}</p>
                 <div class="d-flex flex-row bd-highlight pt-3">
                     {% for label in article.label.all %}
