@@ -14,7 +14,7 @@ class Label(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=250)
     body = RichTextUploadingField()
     summary = models.TextField()
     thumbnail = models.ImageField(upload_to='thumbnails')
