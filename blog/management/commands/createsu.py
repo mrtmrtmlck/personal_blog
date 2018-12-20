@@ -9,5 +9,5 @@ class Command(BaseCommand):
         username = config('ADMIN_USERNAME')
         email = config('ADMIN_EMAIL')
         password = config('ADMIN_PASSWORD')
-        if not User.objects.filter(username).exists():
+        if not User.objects.filter(username=username).exists():
             User.objects.create_superuser(username, email, password)
