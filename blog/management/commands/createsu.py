@@ -6,6 +6,6 @@ from django.contrib.auth.models import User
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        if not User.objects.filter(username="admin").exists():
+        if not User.objects.filter(config('ADMIN_USERNAME')).exists():
             User.objects.create_superuser(config('ADMIN_USERNAME'), config('ADMIN_EMAIL'), config('ADMIN_PASSWORD'))
             self.stdout.write(self.style.SUCCESS('Successfully created new super user'))
