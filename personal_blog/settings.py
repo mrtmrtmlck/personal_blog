@@ -36,7 +36,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = config('SECURE_HSTS_INCLUDE_SUBDOMAINS', defaul
 SECURE_HSTS_PRELOAD = config('SECURE_HSTS_PRELOAD', default=True, cast=bool)
 SECURE_HSTS_SECONDS = config('SECURE_HSTS_SECONDS', default=31536000, cast=int)
 X_FRAME_OPTIONS = config('X_FRAME_OPTIONS', default='DENY')
-
+SECURE_REDIRECT_EXEMPT = config('SECURE_EXEMPT_LIST', cast=Csv())
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Application definition
