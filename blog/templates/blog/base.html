@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>{% block title %}{% endblock %}</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% load static %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'app/img/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'app/img/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'app/img/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'app/img/favicon/site.webmanifest' %}">
     <link rel="stylesheet" href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'lib/fontawesome/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 
-    {% block title %}{% endblock %}
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
