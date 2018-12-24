@@ -60,3 +60,27 @@ footer a:hover {
 .btn-search:focus {
     outline: 0 !important;
 }
+
+@media (max-width: 576px) {
+    .article-content img {
+        width: 90vw !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    .article-content img {
+        width: 80vw !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .article-content img {
+        width: 70vw !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .article-content img {
+        width: 600px !important;
+    }
+}
