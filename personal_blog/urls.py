@@ -36,6 +36,8 @@ urlpatterns = [
                   path('blog/', include('blog.urls')),
                   path('', RedirectView.as_view(url='/about')),
                   path('about/', cache_page(CACHE_TTL)(TemplateView.as_view(template_name='about.html')), name='about'),
+                  path('google71ed5deb4b3fc51d.html',
+                       TemplateView.as_view(template_name='google71ed5deb4b3fc51d.html')),
                   path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
                   re_path(r'^robots\.txt', include('robots.urls')),
                   re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
