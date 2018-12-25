@@ -48,9 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'ckeditor',
     'ckeditor_uploader',
     'storages',
+    'robots',
 ]
 
 MIDDLEWARE = [
@@ -68,8 +71,7 @@ ROOT_URLCONF = 'personal_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,7 +142,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-# ckeditor settings
+# Ckeditor settings
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_CONFIGS = {
@@ -190,7 +192,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 # you run `collectstatic`).
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-#  Static files settings
+# Static files settings
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
@@ -198,13 +200,13 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-# static media settings
+# Static media settings
 STATIC_ROOT = f'/{STATICFILES_LOCATION}/'
 STATIC_URL = f'//{AWS_CLOUDFRONT_DOMAIN}/{STATICFILES_LOCATION}/'
 MEDIA_ROOT = '/%s/' % MEDIAFILES_LOCATION
 MEDIA_URL = f'//{AWS_CLOUDFRONT_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-#  Cache settings
+# Cache settings
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
@@ -216,3 +218,9 @@ CACHES = {
 }
 # Time to live 1 day
 CACHE_TTL = 60 * 60 * 24
+
+# Django Sites Framework Settings
+SITE_ID = 1
+
+# Django Robots Settings
+ROBOTS_USE_SCHEME_IN_HOST = True

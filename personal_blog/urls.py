@@ -20,6 +20,14 @@ from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.urls import include, path, re_path
 from django.views.decorators.cache import cache_page
 from django.views.generic import RedirectView, TemplateView
+from django.contrib.sitemaps.views import sitemap
+
+from sitemaps import StaticViewSitemap, BlogSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'blog': BlogSitemap,
+}
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
@@ -28,5 +36,7 @@ urlpatterns = [
                   path('blog/', include('blog.urls')),
                   path('', RedirectView.as_view(url='/about')),
                   path('about/', cache_page(CACHE_TTL)(TemplateView.as_view(template_name='about.html')), name='about'),
+                  path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+                  re_path(r'^robots\.txt', include('robots.urls')),
                   re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
