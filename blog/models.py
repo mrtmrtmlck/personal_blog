@@ -19,7 +19,7 @@ class Article(models.Model):
     title = models.CharField(max_length=250)
     body = RichTextUploadingField()
     summary = models.TextField()
-    thumbnail = models.ImageField(upload_to='thumbnails')
+    thumbnail = models.ImageField(upload_to='thumbnails', null=True, blank=True)
     label = models.ManyToManyField(Label)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
