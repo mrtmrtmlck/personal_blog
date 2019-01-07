@@ -9,7 +9,7 @@ CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
 class ArticleListView(ListView):
-    paginate_by = 8
+    paginate_by = 4
     template_name = 'blog/index.html'
 
     def get_queryset(self):
