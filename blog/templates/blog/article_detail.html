@@ -1,6 +1,9 @@
 {% extends "blog/base.html" %}
 
 {% block title %}{{ article.title }}{% endblock %}
+{% block meta_description %}
+    <meta name="description" content="{{ article.summary|truncatechars:160 }}">
+{% endblock %}
 
 {% block content %}
     <div class="article-container">

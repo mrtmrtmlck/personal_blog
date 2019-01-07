@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 
-{% block title %}Blog{% endblock %}
+{% block title %}Mert's Personal Blog{% endblock %}
 
 {% block content %}
     {% if article_list %}
@@ -9,7 +9,7 @@
                 <a class="card-link" href="{% url 'article-detail' article.slug %}">
                     <div class="col-md-6">
                         <div class="card mb-4 shadow-sm" style="height: auto;">
-                            <img class="card-img-top" src="{{ article.thumbnail.url }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ article.title }}</h5>
                                 <h6 class="card-subtitle mb-2">

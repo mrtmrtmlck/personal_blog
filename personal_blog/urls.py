@@ -34,7 +34,7 @@ CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('blog/', include('blog.urls')),
-                  path('', RedirectView.as_view(url='/about')),
+                  path('', RedirectView.as_view(url='/blog/', permanent=True)),
                   path('about/', cache_page(CACHE_TTL)(TemplateView.as_view(template_name='about.html')), name='about'),
                   path('google71ed5deb4b3fc51d.html',
                        TemplateView.as_view(template_name='google71ed5deb4b3fc51d.html')),
